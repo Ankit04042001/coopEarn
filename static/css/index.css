@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px 5px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  color: #0d6efd;
+  border-bottom: 0.1px solid rgba(128, 128, 128, 0.5);
+  background-color: rgba(216, 210, 210, 0.2);
+}
+
+h1 ~ p {
+  margin-bottom: 2rem;
+  color: gray;
+}
+
+form .form-label {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+form input.form-control:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+form .form-text {
+  font-size: 0.8rem;
+}
+
+form .invalid {
+  border: 1px solid red;
+}
+
+form .btn-primary {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#fff), to(#4CAF50));
+  background-image: linear-gradient(to right bottom, #fff, #4CAF50);
+  color: #0d6efd;
+  border: none;
+}
+
+form .btn-primary:focus, form .btn-primary:active, form .btn-primary:hover {
+  border: 1px solid green;
+  outline: none;
+  color: black;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/********************************    resoponsive design   ************************************/
+@media (min-width: 750px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media (min-width: 980px) {
+  .container {
+    width: 60%;
+  }
+}
+/*# sourceMappingURL=index.css.map */

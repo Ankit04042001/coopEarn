@@ -1,0 +1,46 @@
+$color:(
+    primary: #0d6efd,
+    success: #4CAF50,
+
+);
+
+
+@function color($mycolor){
+    @return map-get($color, $mycolor);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    min-height: 100vh;
+    position:relative;
+    padding-bottom : 100px;
+}
+
+
+
+.list-heading{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding:10px 5px;
+    font-size: 1rem;
+    font-weight:700;
+    letter-spacing: 0.7px;
+    color : color(primary);
+    border-bottom: 0.1px solid rgba(128, 128, 128,0.5);
+    background-color: rgba(216, 210, 210,0.2);
+}
+
+
+.list-item{
+    margin-top: 10px;
+    font-size: 1rem;
+    letter-spacing: 0.7px;
+    
+}

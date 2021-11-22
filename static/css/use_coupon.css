@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+form {
+  margin-top: 50px;
+}
+
+form .btn-primary {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#fff), to(#4CAF50));
+  background-image: linear-gradient(to right bottom, #fff, #4CAF50);
+  color: black;
+  border: none;
+}
+
+form .btn-primary:focus, form .btn-primary:active, form .btn-primary:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+  border: 1px solid green;
+  color: black;
+}
+
+/********************************    resoponsive design   ************************************/
+@media (min-width: 750px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media (min-width: 980px) {
+  .container {
+    width: 60%;
+  }
+}
+/*# sourceMappingURL=use_coupon.css.map */

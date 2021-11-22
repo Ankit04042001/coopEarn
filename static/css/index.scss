@@ -1,0 +1,107 @@
+
+$color:(
+    primary: #0d6efd,
+    success: #4CAF50,
+
+);
+
+
+@function color($mycolor){
+    @return map-get($color, $mycolor);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding:10px 5px;
+    font-size: 1.2rem;
+    font-weight:700;
+    letter-spacing: 0.7px;
+    color : color(primary);
+    border-bottom: 0.1px solid rgba(128, 128, 128,0.5);
+    background-color: rgba(216, 210, 210,0.2);
+}
+
+h1~p{
+    margin-bottom: 2rem;
+    color:gray;
+
+}
+
+
+form{
+
+    .form-label{
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    input.form-control:focus{
+        box-shadow: none;   
+    }
+    .form-text{
+        font-size: 0.8rem;
+    }
+
+    .invalid{
+        border: 1px solid red;
+    }
+
+    .btn-primary{
+        background-image: linear-gradient(to right bottom, #fff, color(success));
+        color: color(primary);
+        border: none;
+    }
+
+    .btn-primary:focus,.btn-primary:active,.btn-primary:hover{
+        border: 1px solid green;
+        outline: none;
+        color:black;
+        box-shadow: none;
+    }
+}
+
+
+
+
+/********************************    resoponsive design   ************************************/
+
+
+
+$tab:750px;
+$desktop:980px;
+
+
+@mixin tab {
+    @media (min-width: #{$tab}){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}){
+        @content;
+    }
+}
+
+
+
+///**************************** container ***************************///
+
+@include tab{
+    .container{
+        width: 80%;
+    }
+}
+
+
+@include desktop(){
+    .container{
+        width: 60%;
+    }
+}

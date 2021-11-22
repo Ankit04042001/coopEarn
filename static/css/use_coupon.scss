@@ -1,0 +1,78 @@
+
+
+$color:(
+    primary: #0d6efd,
+    success: #4CAF50,
+
+);
+
+
+@function color($mycolor){
+    @return map-get($color, $mycolor);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+form{
+    margin-top:50px;
+
+    .btn-primary{
+        background-image: linear-gradient(to right bottom, #fff, color(success));
+        color:black;
+        border:none;
+    }
+
+    .btn-primary:focus, .btn-primary:active, .btn-primary:hover{
+        box-shadow: none;
+        outline:none;
+        border:1px solid green;
+        color:black;
+
+
+    }
+}
+
+
+
+
+/********************************    resoponsive design   ************************************/
+
+
+
+$tab:750px;
+$desktop:980px;
+
+
+@mixin tab {
+    @media (min-width: #{$tab}){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}){
+        @content;
+    }
+}
+
+
+
+///**************************** container ***************************///
+
+@include tab{
+    .container{
+        width: 80%;
+    }
+}
+
+
+@include desktop(){
+    .container{
+        width: 60%;
+    }
+}

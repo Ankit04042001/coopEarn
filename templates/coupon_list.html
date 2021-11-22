@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/coupon_list.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row list-heading">
+            <div class="col-6 col-sm-4 text-center"> Coupon Code </div>
+            <div class="col-4 d-none d-sm-block text-center"> Status </div>
+            <div class="col-6 col-sm-4 text-center"> Button </div>
+        </div>
+
+        {% for coupon in coupon_list %}
+            <div class="row list-item">
+                <div class="col-6 col-sm-4 text-center"> {{coupon.coupon_code}} </div>
+                <div class="col-4 text-center d-none d-sm-block"> {{coupon.status}} </div>
+                <div class="col-6 col-sm-4 text-center"><a href="{% url 'coupon' coupon.pk %}" class="text-decoration-none">Click Here</a> </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}

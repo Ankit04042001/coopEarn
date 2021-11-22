@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel='stylesheet' href="{% static 'css/coupon_detail.css' %}">
+{% endblock%}
+
+{% block content %}
+    <div class="container">
+        <figure>
+            <img src="{{coupon.qr_code.url}}" alt="Qr Code">
+            <figcaption class="text-center">Scan this QR Code</figcaption>
+        </figure>
+    </div>
+
+
+{% endblock %}

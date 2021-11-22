@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/use_coupon.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% else %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+        {% endfor %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="mb-3 row">
+                <label for="coupon" class="col-sm-4 col-lg-3 col-form-label">Enter Coupon Code : </label>
+                <div class="col-sm-8 col-lg-9 ">
+                    <input type="text" class="form-control" id="coupon" name='coupon'>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div  class="col-sm-4 col-lg-3"></div>
+                <div class="col-sm-8 col-lg-9">
+                    <button type="submit" class="btn btn-primary">Use Coupon</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+{% endblock %}
